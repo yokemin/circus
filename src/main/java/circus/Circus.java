@@ -3,9 +3,12 @@ package circus;
 import circus.animal.Animal;
 import circus.animal.Duck;
 import circus.animal.Parrot;
+import circus.stuff.Cage;
 import circus.stuff.Cannon;
 import circus.stuff.Equipment;
 import circus.stuff.Ladder;
+
+import java.util.ArrayList;
 
 public class Circus {
     private static Animal[] animals = {
@@ -43,5 +46,19 @@ public class Circus {
         makeAnimalsTalk();
         System.out.println("Total value of equipments " + calculateValue(equipments));
         System.out.println("Total value of animals " + calculateValue(animals));
+        Cage<Duck> duckCage = new Cage<>();
+        Duck duck = new Duck();
+        duckCage.lockUp(duck);
+        Parrot parrot = new Parrot();
+        Cage<Parrot> parrotCage = new Cage<>();
+        parrotCage.lockUp(parrot);
+
+        ArrayList<Cage> cages = new ArrayList<>();
+        cages.add(duckCage);
+        cages.add(parrotCage);
+
+        for(Cage c: cages) {
+            c.release();
+        }
     }
 }
