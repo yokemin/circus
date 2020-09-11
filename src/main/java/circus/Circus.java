@@ -51,6 +51,7 @@ public class Circus {
 //        animals[2] = new Duck("Louie");
 //        System.out.println(animals.length);
 
+        // Collections
         ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
 
         animalArrayList.add(new Duck("Goose"));
@@ -71,5 +72,10 @@ public class Circus {
             System.out.println(a);
         }
         System.out.println("Index of Louie: " + animalArrayList.indexOf(louie));
+
+        // remove from array list
+        animalArrayList.remove(louie);
+        System.out.println("Index of Louie: " + animalArrayList.indexOf(louie));
+        
     }
 }
